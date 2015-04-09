@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebDemo.Infrastructure;
+using WebDemo.Infrastructure.ModelMetadata;
 
 namespace WebDemo
 {
@@ -21,6 +23,10 @@ namespace WebDemo
 
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new FeatureViewLocationRazorViewEngine());
+
+            ModelMetadataProviders.Current = new ConventionalModelMetadataProvider(new ModelMetadataConvention[] {
+                new IdDisplayNameConvention()
+            });
         }
     }
 }
