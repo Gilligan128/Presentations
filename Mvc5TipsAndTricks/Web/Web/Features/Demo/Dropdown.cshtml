@@ -1,0 +1,13 @@
+﻿@using WebDemo;
+@model WebDemo.Features.Demo.DropdownForm
+
+@{
+    Layout = "~/Features/Shared/_Layout.cshtml";
+}@using(Html.BeginForm())
+{
+    @Html.QueryDropDown(x => x.UserId, db => db.Users.Select(u => new SelectListItem
+{
+    Text = u.UserName,
+    Value = u.Id.ToString()
+}) )  
+}

@@ -1,0 +1,11 @@
+﻿@model WebDemo.Features.Demo.LinkModel[]
+@{
+    Layout = "~/Features/Shared/_Layout.cshtml";
+    var index = 0;
+}
+
+@foreach (var link in Model)
+{
+    <div>@Html.DisplayFor(m => m[index])</div>
+    index++;
+}

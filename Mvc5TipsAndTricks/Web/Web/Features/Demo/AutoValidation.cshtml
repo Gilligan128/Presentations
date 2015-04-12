@@ -1,0 +1,12 @@
+﻿@model WebDemo.Features.Demo.AutoValidationForm
+
+@Html.ValidationSummary(true)
+@using(Html.BeginForm())
+{
+    <fieldset>
+        @Html.LabelFor(m => m.Required)
+        @Html.EditorFor(m => m.Required)
+        @Html.ValidationMessageFor(m => m.Required)
+    </fieldset>
+    <input type="submit" value="Submit" />
+}
